@@ -4,7 +4,7 @@ PORT = 50000
 BUFFER_SIZE = 1024
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-    s.bind(('192.168.1.13', PORT))
+    s.bind(('192.168.1.13', PORT)) # 自分のPCのIPアドレスを書く
     s.listen() #相手を待ちます ドキドキ
     (connection, client) = s.accept()
     print(client, 'から会話を申し込まれました。')
