@@ -1,6 +1,6 @@
 import socket
 
-PORT = 50000
+PORT = 9001
 BUFFER_SIZE = 1024
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
