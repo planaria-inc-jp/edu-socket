@@ -3,6 +3,7 @@ from tkinter import scrolledtext as S
 import threading
 from abc import ABCMeta, abstractmethod
 
+# 共通のプログラムをクラスとして用意
 class BaseFrame(tk.Frame, metaclass=ABCMeta):
     def __init__(self, master=None):
         tk.Frame.__init__(self, master)
@@ -44,15 +45,19 @@ class BaseFrame(tk.Frame, metaclass=ABCMeta):
     def addLog(self, log):
         self.logText.insert(1.0, log + '\r\n')
 
+    # 接続してメッセージを受信するスレッドを起動
     def startConncting(self):
         thread = threading.Thread(target = self.connect, daemon= True)
         thread.start()
 
+    # メッセージを送信する
     def send(self):
         self.sendMessage()
         # self.msgTextBox.delete(0, tk.END)
 
+    # Enterキーを押したときの処理
     def eventEnter(self, event):
+        # self.send()
         pass
 
     @abstractmethod
