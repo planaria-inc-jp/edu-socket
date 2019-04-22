@@ -1,5 +1,4 @@
 import socket
-import tkinter as tk
 from myapp import BaseFrame
 
 BUFFER_SIZE = 1024
